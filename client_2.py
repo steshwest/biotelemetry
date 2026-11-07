@@ -12,13 +12,13 @@ import requests # Добавь в импорты
 SECRET_KEY = b'u6X_D7C_7Z6S4hL6p-Xp8j_C8Y_C7G5J6vS8Z8_L5k0=' 
 cipher = Fernet(SECRET_KEY)
 
-TARGET_IP = "192.168.56.1" # ID of cli_1
+TARGET_IP = "127.0.0.1" # ID of cli_1
 TARGET_PORT = 5006
 MY_PORT = 5005
 
 def get_session_key(user_id, room_id):
     """Запрос ключа шифрования у сервера"""
-    url = f"http://192.168.56.1:8000/auth/get_token" # change to TARGET_IP серверного пк
+    url = f"http://127.0.0.1:8000/auth/get_token" # change to TARGET_IP серверного пк
     payload = {"user_id": user_id, "room_id": room_id}
     
     response = requests.post(url, json=payload)
